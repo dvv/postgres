@@ -116,6 +116,11 @@ interface BaseOptions<T extends Record<string, postgres.PostgresType>> {
    */
   fetch_types: boolean;
   /**
+   * Do not subscribe to publications on connect
+   * @default false
+   */
+  no_subscribe: boolean;
+  /**
    * Publications to subscribe to (only relevant when calling `sql.subscribe()`)
    * @default 'alltables'
    */
