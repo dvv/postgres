@@ -22,6 +22,7 @@ export default function Subscribe(postgres, options) {
       replication: 'database'
     },
     onclose: async function() {
+      await options.onclose?.()
       if (ended)
         return
       stream = null
